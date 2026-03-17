@@ -30,6 +30,45 @@
   --error-light: #ffebee;
   --info: #0c5460;
   --info-light: #d1ecf1;
+
+  /* Activity tag colors */
+  --tag-sports-bg: #e8f5e9;
+  --tag-sports-text: #2e7d32;
+  --tag-arts-bg: #f3e5f5;
+  --tag-arts-text: #7b1fa2;
+  --tag-academic-bg: #e3f2fd;
+  --tag-academic-text: #1565c0;
+  --tag-community-bg: #fff3e0;
+  --tag-community-text: #e65100;
+  --tag-technology-bg: #e8eaf6;
+  --tag-technology-text: #3949ab;
+}
+
+/* Dark mode color overrides */
+[data-theme="dark"] {
+  --background: #121212;
+  --surface: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #aaaaaa;
+  --border: #444444;
+  --border-light: #2c2c2c;
+  --border-focus: #555555;
+  --success-light: #1b3d1c;
+  --warning-light: #3d2e00;
+  --error-light: #3d1010;
+  --info-light: #0a2a30;
+
+  /* Activity tag colors - dark variants */
+  --tag-sports-bg: #1b3d1c;
+  --tag-sports-text: #81c784;
+  --tag-arts-bg: #3b1a47;
+  --tag-arts-text: #ce93d8;
+  --tag-academic-bg: #0d2b4e;
+  --tag-academic-text: #90caf9;
+  --tag-community-bg: #3d2000;
+  --tag-community-text: #ffb74d;
+  --tag-technology-bg: #1a1d3d;
+  --tag-technology-text: #9fa8da;
 }
 
 * {
@@ -195,8 +234,6 @@ section h3 {
   position: absolute;
   top: 8px;
   right: 8px;
-  background: #e8eaf6;
-  color: #3949ab;
   font-size: 0.65rem;
   font-weight: bold;
   padding: 2px 6px;
@@ -204,6 +241,12 @@ section h3 {
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
+
+.activity-tag.tag-sports { background-color: var(--tag-sports-bg); color: var(--tag-sports-text); }
+.activity-tag.tag-arts { background-color: var(--tag-arts-bg); color: var(--tag-arts-text); }
+.activity-tag.tag-academic { background-color: var(--tag-academic-bg); color: var(--tag-academic-text); }
+.activity-tag.tag-community { background-color: var(--tag-community-bg); color: var(--tag-community-text); }
+.activity-tag.tag-technology { background-color: var(--tag-technology-bg); color: var(--tag-technology-text); }
 
 /* Capacity Indicator */
 .capacity-container {
@@ -617,6 +660,9 @@ footer {
   position: absolute;
   top: 10px;
   right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 #user-status {
@@ -663,4 +709,39 @@ footer {
 
 #logout-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Dark mode toggle button */
+#dark-mode-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  border: none;
+  color: white;
+}
+
+#dark-mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Dark mode search input */
+[data-theme="dark"] .search-box input {
+  background-color: var(--surface);
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+/* Dark mode modal */
+[data-theme="dark"] .modal-content input {
+  background-color: var(--surface);
+  color: var(--text-primary);
+  border-color: var(--border);
 }
